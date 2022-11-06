@@ -6,8 +6,8 @@ const gameWrap = document.querySelector(".gameWrap");
 async function apiCall() {
     try {
         const respons = await fetch(url);
-        const results = await respons.json();
-        const facts = results.results;
+        const json = await respons.json();
+        const facts = json.results;
         gameWrap.innerHTML = "";
 
         for(let i = 0; i < facts.length; i++) {
